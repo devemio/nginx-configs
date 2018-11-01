@@ -15,10 +15,12 @@ sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/se
 git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
 
 sudo mkdir /etc/nginx/base && sudo chown $(whoami) /etc/nginx/base
-git clone git@github.com:isswp101/laravel-nginx-configs.git /etc/nginx/base
+git clone https://github.com/isswp101/laravel-nginx-configs.git /etc/nginx/base
 
 sudo cp /etc/nginx/base/examples/nginx.conf /etc/nginx/nginx.conf
 sudo cp /etc/nginx/base/examples/conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+sudo systemctl reload nginx
 ```
 
 ## Usage
