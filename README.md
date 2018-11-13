@@ -10,6 +10,8 @@ nginx -v
 nginx version: nginx/1.15.3
 ```
 
+## Wildcard
+
 ```
 sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/server-configs-nginx
 git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
@@ -21,4 +23,15 @@ sudo cp /etc/nginx/base/nginx/nginx.conf /etc/nginx/nginx.conf
 sudo cp /etc/nginx/base/nginx/conf.d/wildcard.conf /etc/nginx/conf.d/wildcard.conf
 
 sudo systemctl reload nginx
+```
+
+## SSL
+
+```
+./certbot/certonly.sh
+
+cd /etc/letsencrypt
+sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf
+
+sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 4096
 ```
