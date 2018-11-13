@@ -9,4 +9,4 @@ sudo docker run -it --rm --name certbot \
         --manual-public-ip-logging-ok \
         --preferred-challenges dns-01 \
         --server https://acme-v02.api.letsencrypt.org/directory \
-        -d *.example.com
+        -d example.com -d *.example.com
