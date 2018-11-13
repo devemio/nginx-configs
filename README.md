@@ -1,4 +1,4 @@
-# Laravel nginx configurations
+# Wildcard laravel nginx letsencrypt configurations
 
 ## Installation
 
@@ -33,5 +33,5 @@ sudo systemctl reload nginx
 cd /etc/letsencrypt
 sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf
 
-sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 4096
+sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 2048
 ```
