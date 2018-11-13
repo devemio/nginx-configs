@@ -10,7 +10,7 @@ nginx -v
 nginx version: nginx/1.15.3
 ```
 
-## Wildcard
+### Wildcard
 
 ```
 sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/server-configs-nginx
@@ -25,7 +25,7 @@ sudo cp /etc/nginx/base/nginx/conf.d/wildcard.conf /etc/nginx/conf.d/wildcard.co
 sudo systemctl reload nginx
 ```
 
-## SSL
+### SSL
 
 ```
 ./certbot/certonly.sh
