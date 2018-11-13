@@ -29,9 +29,7 @@ sudo systemctl reload nginx
 
 ```
 ./certbot/certonly.sh
-
-cd /etc/letsencrypt
-sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf
-
+sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf -P /etc/letsencrypt
 sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 2048
+sudo systemctl reload nginx
 ```
