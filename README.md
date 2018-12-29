@@ -1,5 +1,7 @@
 # Wildcard laravel nginx letsencrypt configurations
 
+Based on [Nginx Server Configs](https://github.com/h5bp/server-configs-nginx).
+
 ## Installation
 
 Tested on
