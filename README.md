@@ -4,15 +4,15 @@
 
 Tested on
 
-```
+```bash
 nginx -v
 
-nginx version: nginx/1.15.8
+# nginx version: nginx/1.15.8
 ```
 
 ### Wildcard
 
-```
+```bash
 sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/server-configs-nginx
 git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
 
@@ -27,7 +27,7 @@ sudo systemctl reload nginx
 
 ### SSL
 
-```
+```bash
 ./certbot/certonly.sh
 sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf -P /etc/letsencrypt
 sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 2048
