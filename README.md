@@ -7,7 +7,7 @@ Tested on
 ```
 nginx -v
 
-nginx version: nginx/1.15.3
+nginx version: nginx/1.15.8
 ```
 
 ### Wildcard
