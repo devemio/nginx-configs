@@ -20,8 +20,8 @@ sudo cp /etc/nginx/base/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 sudo cp /etc/nginx/base/nginx/conf.d/wildcard.conf /etc/nginx/conf.d/wildcard.conf
 
 # Replace path to ssl certificates
-sed -i "s|/etc/letsencrypt/live/example.com|/etc/letsencrypt/live/$1|g" /etc/nginx/conf.d/default.conf
-sed -i "s|/etc/letsencrypt/live/example.com|/etc/letsencrypt/live/$1|g" /etc/nginx/conf.d/wildcard.conf
+sed -i "s|example.com|$1|g" /etc/nginx/conf.d/default.conf
+sed -i "s|example.com|$1|g" /etc/nginx/conf.d/wildcard.conf
 
 # Restart nginx
 sudo systemctl reload nginx
