@@ -1,37 +1,52 @@
-# Wildcard laravel nginx letsencrypt configurations
+# Configurations: secure laravel + wildcard nginx + wildcard letsencrypt https
+
+This script allows you to quickly deploy the latest version of nginx web server, configure wildcard domain routing, install a secure ssl wildcard certificate through letsencrypt. This installation has been tested on **ubuntu 16.04** and **nginx 1.15.11**.
 
 Based on [Nginx Server Configs](https://github.com/h5bp/server-configs-nginx).
 
 ## Installation
 
-Tested on
+### 0. Install nginx latest version [optional]
 
 ```bash
-nginx -v
-
-# nginx version: nginx/1.15.8
+./bin/install-nginx.sh
 ```
 
-### Wildcard
+### 0. Install docker [optional]
 
 ```bash
-sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/server-configs-nginx
-git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
-
-sudo mkdir /etc/nginx/base && sudo chown $(whoami) /etc/nginx/base
-git clone https://github.com/isswp101/laravel-nginx-configs.git /etc/nginx/base
-
-sudo cp /etc/nginx/base/nginx/nginx.conf /etc/nginx/nginx.conf
-sudo cp /etc/nginx/base/nginx/conf.d/wildcard.conf /etc/nginx/conf.d/wildcard.conf
-
-sudo systemctl reload nginx
+./bin/install-docker.sh
 ```
 
-### SSL
+### 1. Install nginx configurations
 
 ```bash
-./certbot/certonly.sh
-sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf -P /etc/letsencrypt
-sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 2048
-sudo systemctl reload nginx
+./bin/install-configurations.sh <base_domain_name>
+```
+
+The following files will be created:
+
+```
+/etc/nginx
+  |- server-configs-nginx // base configurations from h5bp
+  |- base // bash nginx configurations
+  |- conf.d
+  |  - default.conf
+  |  - wildcard.conf
+  |- nginx.conf
+```
+
+### 2. Install wildcard ssl certificates using letsencrypt
+
+```bash
+./bin/install-ssl.sh <base_domain_name>
+```
+
+The following files will be created:
+
+```
+/etc/letsencrypt
+  |- live
+  |- options-ssl-nginx.conf
+  |- ssl-dhparams.pem
 ```
