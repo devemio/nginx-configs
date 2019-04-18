@@ -6,13 +6,13 @@ Based on [Nginx Server Configs](https://github.com/h5bp/server-configs-nginx).
 
 ## Installation
 
-### Install nginx latest version [optional]
+### Install Nginx (optional)
 
 ```bash
 ./bin/install-nginx.sh
 ```
 
-### Install docker [optional]
+### Install Docker (optional)
 
 ```bash
 ./bin/install-docker.sh
