@@ -31,5 +31,6 @@ sed -i "s|example.com|$1|g" /etc/nginx/conf.d/wildcard.conf
 sudo systemctl reload nginx
 
 # Install base html page
-sudo cp /etc/nginx/base/html/404.html /var/www/html/index.html
+sudo mkdir -p /var/www/html
+sudo echo "OK" > /var/www/html/index.html
 sudo chown $(whoami) /var/www/html/index.html
