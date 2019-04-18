@@ -29,7 +29,7 @@ The following files will be created:
 ```
 /etc/nginx
   |- server-configs-nginx // base configurations from h5bp
-  |- base // bash nginx configurations
+  |- base                 // bash nginx configurations
   |- conf.d
   |  |- default.conf
   |  |- wildcard.conf
