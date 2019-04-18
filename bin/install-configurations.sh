@@ -10,7 +10,8 @@ fi
 sudo rm -rf /etc/nginx/server-configs-nginx && \
 sudo mkdir /etc/nginx/server-configs-nginx && \
 sudo chown $(whoami) /etc/nginx/server-configs-nginx && \
-git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
+git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx && \
+cd /etc/nginx/server-configs-nginx && git checkout b935688c2b5e1621bf738379ad949f4a84e325ea
 
 # Clone base configurations
 sudo rm -rf /etc/nginx/base && \
