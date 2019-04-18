@@ -6,7 +6,19 @@ then
     exit 1
 fi
 
-sudo ./certbot/certonly.sh $1
-sudo wget https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf -P /etc/letsencrypt
+# Install certificates
+source="https://raw.githubusercontent.com/devemio/laravel-nginx-configs/develop/certbot/certonly.sh"
+file="$(mktemp /tmp/certonly.sh.XXXXXX)"
+sudo wget -q -O $file $source
+sudo bash $file $1
+sudo rm -f "$file"
+
+# Install options-ssl-nginx
+sudo wget -q -O /etc/letsencrypt/options-ssl-nginx.conf https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/options-ssl-nginx.conf
+
+# Install ssl-dhparams
+sudo rm -f /etc/letsencrypt/ssl-dhparams.pem && \
 sudo openssl dhparam -out /etc/letsencrypt/ssl-dhparams.pem 2048
+
+# Restart nginx
 sudo systemctl reload nginx
