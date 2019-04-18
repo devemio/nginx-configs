@@ -7,11 +7,15 @@ then
 fi
 
 # Clone h5bp
-sudo mkdir /etc/nginx/server-configs-nginx && sudo chown $(whoami) /etc/nginx/server-configs-nginx
+sudo rm -rf /etc/nginx/server-configs-nginx && \
+sudo mkdir /etc/nginx/server-configs-nginx && \
+sudo chown $(whoami) /etc/nginx/server-configs-nginx && \
 git clone https://github.com/h5bp/server-configs-nginx.git /etc/nginx/server-configs-nginx
 
 # Clone base configurations
-sudo mkdir /etc/nginx/base && sudo chown $(whoami) /etc/nginx/base
+sudo rm -rf /etc/nginx/base && \
+sudo sudo mkdir /etc/nginx/base && \
+sudo chown $(whoami) /etc/nginx/base && \
 git clone https://github.com/devemio/laravel-nginx-configs.git /etc/nginx/base
 
 # Install default and wildcard domain configurations
