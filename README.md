@@ -1,4 +1,6 @@
-# Configurations: secure laravel + wildcard nginx + wildcard letsencrypt https
+# Configurations
+
+## Secure Laravel. Wildcard Nginx. Wildcard Letsencrypt Https.
 
 This script allows you to quickly deploy the latest version of nginx web server, configure wildcard domain routing, install a secure ssl wildcard certificate through letsencrypt. This installation has been tested on **ubuntu 16.04** and **nginx 1.15.11**.
 
@@ -6,13 +8,13 @@ Based on [Nginx Server Configs](https://github.com/h5bp/server-configs-nginx).
 
 ## Installation
 
-### 0. Install nginx latest version [optional]
+### Install nginx latest version [optional]
 
 ```bash
 ./bin/install-nginx.sh
 ```
 
-### 0. Install docker [optional]
+### Install docker [optional]
 
 ```bash
 ./bin/install-docker.sh
@@ -31,8 +33,8 @@ The following files will be created:
   |- server-configs-nginx // base configurations from h5bp
   |- base // bash nginx configurations
   |- conf.d
-  |  - default.conf
-  |  - wildcard.conf
+  |  |- default.conf
+  |  |- wildcard.conf
   |- nginx.conf
 ```
 
