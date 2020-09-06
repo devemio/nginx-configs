@@ -1,6 +1,6 @@
-# Wildcard Nginx Configs for Laravel with SSL
+# 🔒 Wildcard SSL Nginx configuration for Laravel
 
-This script allows you to quickly deploy the latest version of nginx web server, configure wildcard domain routing, install a secure ssl wildcard certificate through letsencrypt. This installation has been tested on **Ubuntu 16.04** and **Nginx 1.15.11**.
+This script allows you to quickly install the latest version of **Nginx** web server, configure wildcard domain routing, install a secure ssl wildcard certificate through **Let's Encrypt**. This installation has been tested on **Ubuntu 16.04** and **Nginx 1.15.11**.
 
 Based on [Nginx Server Configs](https://github.com/h5bp/server-configs-nginx).
 
@@ -36,7 +36,7 @@ The following files will be created:
   |- nginx.conf
 ```
 
-### 2. Install wildcard ssl certificates using letsencrypt
+### 2. Install wildcard ssl certificates with Let's Encrypt
 
 ```bash
 ./bin/install-ssl.sh <base_domain_name>
